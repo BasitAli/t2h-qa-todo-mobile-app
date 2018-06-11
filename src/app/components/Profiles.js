@@ -6,7 +6,11 @@ import DeleteConfirmationModal from "./DeleteConfirmationModal";
 const ProfileItem = ({ label, value, onChange }) => (
   <View style={{ flexDirection: "column", marginBottom: 20 }}>
     <Text style={{ fontWeight: "bold" }}>{label}</Text>
-    <TextInput value={value} onChangeText={onChange} />
+    <TextInput
+      value={value}
+      onChangeText={onChange}
+      underlineColorAndroid="transparent"
+    />
   </View>
 );
 
@@ -40,7 +44,7 @@ class Profiles extends Component {
     const { name, about, location } = this.props.profile;
 
     return (
-      <View style={{ flexDirection: "column", padding: 10 }}>
+      <View style={{ flexDirection: "column", padding: 20 }}>
         <ProfileItem
           label="Name"
           value={name}
@@ -57,11 +61,7 @@ class Profiles extends Component {
           onChange={value => this.updateField("location", value)}
         />
 
-        <Button
-          title="Clear all items"
-          onPress={() => this.onDelete()}
-          contentStyle={{ width: "100%" }}
-        />
+        <Button title="Clear all items" onPress={() => this.onDelete()} />
 
         <DeleteConfirmationModal
           visible={this.state.showModal}

@@ -15,7 +15,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     borderBottomWidth: 2,
-    borderBottomStyle: "solid",
+    // borderBottomStyle: "solid",
     borderBottomColor: "transparent"
   },
   tabBarItemActive: {
